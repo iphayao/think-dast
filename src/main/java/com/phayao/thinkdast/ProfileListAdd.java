@@ -14,8 +14,8 @@ public class ProfileListAdd {
      */
     public static void main(String[] args) {
         //profileArrayListAddEnd();
-        profileArrayListAddBeginning();
-        //profileLinkedListAddEnd();
+        //profileArrayListAddBeginning();
+        profileLinkedListAddEnd();
         //profileLinkedListAddBeginning();
     }
 
@@ -61,7 +61,7 @@ public class ProfileListAdd {
         };
 
         int startN = 4000;
-        int endMillis = 1000;
+        int endMillis = 10000;
         runProfiler("ArrayList add beginning", timeable, startN, endMillis);
     }
 
