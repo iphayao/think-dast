@@ -39,7 +39,6 @@ public class WikiPhilosophy {
      * @throws IOException
      */
     private static void testConjecture(String destination, String source, int limit) throws IOException {
-        // TODO: Implement this
         String url = source;
         for(int i = 0; i < limit; i++) {
             if(visited.contains(url)) {
