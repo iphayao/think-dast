@@ -12,6 +12,10 @@ import static org.junit.Assert.*;
 public class WikiParserTest {
     final static WikiFetcher wf = new WikiFetcher();
 
+    /**
+     * Test method for {@link WikiParser#findFirstLink()}.
+     * @throws IOException
+     */
     @Test
     public void testFindFirstLink1() throws IOException {
         String url = "https://en.wikipedia.org/wiki/Java_(programming_language)";
@@ -19,6 +23,10 @@ public class WikiParserTest {
         assertThat(href, is("/wiki/Programming_language"));
     }
 
+    /**
+     * Test method for {@link WikiParser#findFirstLink()}.
+     * @throws IOException
+     */
     @Test
     public void testFindFirstLink2() throws IOException {
         String url = "https://en.wikipedia.org/wiki/Mathematics";

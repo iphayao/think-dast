@@ -21,6 +21,9 @@ public class TermCounterTest {
         counter.processElements(paragraphs);
     }
 
+    /**
+     * Test method for {@link TermCounter#size()}.
+     */
     @Test
     public void testSize() {
         assertThat(counter.size(), is(4798));

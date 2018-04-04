@@ -9,6 +9,10 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.instanceOf;
 
 public class ListClientExampleTest {
+
+    /**
+     * Test method for {@link ListClientExample#getList()}.
+     */
     @Test
     public void testListClientExample() {
         ListClientExample lce = new ListClientExample();
