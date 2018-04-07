@@ -10,7 +10,8 @@ public class ProfileMapPut {
 
     public static void main(String[] args) {
         //profileHashMapPut();
-        profileMyHashMapPut();
+        //profileMyHashMapPut();
+        profileFixedHashMapPut();
     }
 
     public static void profileHashMapPut() {
@@ -55,6 +56,28 @@ public class ProfileMapPut {
         int startN = 1000;
         int endMilis = 5000;
         runProfiler("MyHashMap out", timeable, startN, endMilis);
+    }
+
+    public static void profileFixedHashMapPut() {
+        Timeable timeable = new Timeable() {
+            Map<String, Integer> map;
+
+            @Override
+            public void setup(int n) {
+                map = new MyFixedHashMap<String, Integer>();
+            }
+
+            @Override
+            public void timeMe(int n) {
+                for(int i = 0; i < n; i++) {
+                    map.put(String.format("%01d", i), i);
+                }
+            }
+        };
+
+        int startN = 8000;
+        int endMilis = 1000;
+        runProfiler("MyFixedHashMap out", timeable, startN, endMilis);
     }
 
     private static void runProfiler(String title, Timeable timeable, int startN, int endMilis) {

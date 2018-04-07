@@ -21,7 +21,7 @@ public class MyHashMap<K, V> extends MyBetterMap<K, V> implements Map<K, V> {
     /**
      * Double number of maps and rehashes the existing entries.
      */
-    private void rehash() {
+    protected void rehash() {
         // save the existing entries
         List<MyLinearMap<K, V>> oldMaps = maps;
 
