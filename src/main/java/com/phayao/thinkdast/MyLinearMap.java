@@ -149,7 +149,11 @@ public class MyLinearMap<K, V> implements Map<K, V> {
 
     @Override
     public Set<Map.Entry<K, V>> entrySet() {
-        throw new UnsupportedOperationException();
+        Set<Map.Entry<K, V>> set = new HashSet<Map.Entry<K, V>>();
+        for(Entry entry: entries) {
+            set.add(new Entry(entry.getKey(), entry.getValue()));
+        }
+        return set;
     }
 
     public static void main(String[] args) {

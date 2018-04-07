@@ -1,5 +1,7 @@
 package com.phayao.thinkdast;
 
+import com.phayao.thinkdast.MyLinearMap.Entry;
+
 import java.util.*;
 
 public class MyBetterMap<K, V> implements Map<K, V> {
@@ -17,7 +19,7 @@ public class MyBetterMap<K, V> implements Map<K, V> {
      * Makes a collection of 'k' MyLinearMap
      * @param k
      */
-    private void makeMaps(int k) {
+    protected void makeMaps(int k) {
         maps = new ArrayList<MyLinearMap<K, V>>(k);
         for(int i = 0; i < k; i++) {
             maps.add(new MyLinearMap<K, V>());
@@ -53,7 +55,6 @@ public class MyBetterMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean containsValue(Object value) {
-        // TODO:
         for(MyLinearMap<K, V> map: maps) {
             if(map.containsValue(value)) {
                 return true;
@@ -117,7 +118,13 @@ public class MyBetterMap<K, V> implements Map<K, V> {
 
     @Override
     public Set<Entry<K, V>> entrySet() {
-        throw new UnsupportedOperationException();
+        Set<Entry<K, V>> set = new HashSet<Entry<K, V>>();
+        for(MyLinearMap<K, V> map: maps) {
+            for(Entry<K, V> entry: map.entrySet()) {
+                set.add((new MyLinearMap()).new Entry(entry.getKey(), entry.getValue()));
+            }
+        }
+        return set;
     }
 
     public static void main(String[] args) {
