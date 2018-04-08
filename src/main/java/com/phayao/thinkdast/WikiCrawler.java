@@ -49,7 +49,6 @@ public class WikiCrawler {
      * @throws IOException
      */
     public String crawl(boolean testing) throws IOException {
-        // TODO:
         if(queue.isEmpty()) {
             return null;
         }
@@ -74,7 +73,6 @@ public class WikiCrawler {
     }
 
     public void queueInternalLinks(Elements paragraphs) {
-        // TODO:
         for(Element paragraph: paragraphs) {
             queueInternalLinks(paragraph);
         }
