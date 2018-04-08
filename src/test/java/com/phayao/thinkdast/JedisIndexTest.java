@@ -55,7 +55,7 @@ public class JedisIndexTest {
      */
     @Test
     public void testGetCounts() {
-        Map<String, Integer> map = index.getCounters("the");
+        Map<String, Integer> map = index.getCounts("the");
         assertThat(map.get(url1), is(339));
         assertThat(map.get(url2), is(264));
     }

@@ -74,7 +74,7 @@ public class JedisIndex {
      * @param term
      * @return
      */
-    public Map<String, Integer> getCounters(String term) {
+    public Map<String, Integer> getCounts(String term) {
         Map<String, Integer> map = new HashMap<String, Integer>();
         Set<String> urls = getURLs(term);
         for(String url: urls) {

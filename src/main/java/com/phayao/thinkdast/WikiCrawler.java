@@ -57,7 +57,7 @@ public class WikiCrawler {
         System.out.println("Crawling " + url);
 
         if(testing == false && index.isIndexOf(url)) {
-            System.out.println("Alreay Indexed.");
+            System.out.println("Already Indexed.");
             return null;
         }
 
@@ -110,7 +110,7 @@ public class WikiCrawler {
             //break;
         } while (res == null);
 
-        Map<String, Integer> map = index.getCounters("the");
+        Map<String, Integer> map = index.getCounts("the");
         for(Map.Entry<String, Integer> entry: map.entrySet()) {
             System.out.println(entry);
         }

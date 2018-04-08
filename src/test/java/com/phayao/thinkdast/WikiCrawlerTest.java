@@ -58,7 +58,7 @@ public class WikiCrawlerTest {
         assertThat(url3.equals(res), is(true));
         assertThat(crawler.queueSize(), is(704));
 
-        Map<String, Integer> map = index.getCounters("the");
+        Map<String, Integer> map = index.getCounts("the");
 
         count = map.get(url1);
         assertThat(count, is(339));
